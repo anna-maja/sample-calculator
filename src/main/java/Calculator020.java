@@ -10,7 +10,7 @@
  *@version 1.0 
  * 
  **/
-public class Calculator {
+public class Calculator020 {
 	
 	/**
 	 * Add- add two doubles.
