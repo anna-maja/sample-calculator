@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 
-public class CalculatorAddTest {
+public class Calculator020AddTest {
 	private static final Logger LOG = Logger.getLogger(Calculator020.class.getName());
 	Calculator020 calculator = new Calculator020();
 	Random random = new Random();
