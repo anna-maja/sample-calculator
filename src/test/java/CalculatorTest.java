@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+
 import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.logging.Logger;
@@ -16,7 +17,7 @@ public class CalculatorTest {
 	 * The two values should be the same.
 	 */
 
-		
+	@Test
 	public void testAddSmallSizedPositiveNumbers() {
 		double firstNumber = 0;
 		double secondNumber = 0;
@@ -60,6 +61,7 @@ public class CalculatorTest {
 	 * This testmethod tests the method add in the class Calculator with positive random generated numbers 0-1000
 	 */
 	public void testAddLargePositiveNumbers() {
+
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
@@ -75,6 +77,7 @@ public class CalculatorTest {
 		}
 		LOG.info("\n");
 	}
+	
 	@Test
 	/**
 	 * This testmethod tests the method add in the class Calculator witn negative numbers 0 to -10
@@ -105,7 +108,7 @@ public class CalculatorTest {
 		double secondNumber = 0;
 		double result = 0;
 
-		for (int i = 0; i < 200; i++) { // jag kör 200 varv
+		for (int i = 0; i < 200; i++) { 
 			firstNumber = Double.valueOf(df.format(random.nextDouble() * -100)); // genererar nummer 0- -100
 			secondNumber = Double.valueOf(df.format(random.nextDouble() * -100)); // genererar nummer 0- -100
 			result = firstNumber + secondNumber;
@@ -122,6 +125,8 @@ public class CalculatorTest {
 	 * This testmethod tests the method add in the class Calculator with negative random generated numbers 0 to -1000
 	 */
 	public void testAddLargeNegativeNumbers() {
+
+
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
@@ -132,6 +137,46 @@ public class CalculatorTest {
 			result = firstNumber + secondNumber;
 
 			LOG.info("Testing the method add with numbers 0 t0o -1000: " + firstNumber + " and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+		LOG.info("\n");
+	}
+	
+	@Test
+	/**
+	 * This testmethod tests the method add in the class Calculator with random generated numbers 0 to 1000 and firstNumber = 0
+	 */
+	public void testAddOneNumberIsZero() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			secondNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method add with numbers 0 and random 0-1000: " + firstNumber + " and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+		LOG.info("\n");
+	}
+	
+	@Test
+	/**
+	 * This testmethod tests the method add in the class Calculator with both numbers are 0
+	 */
+	public void testAddBothNumbersAreZero() {
+
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method add with numbers 0 and 0: " + firstNumber + " and " + secondNumber);
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
 
 		}
