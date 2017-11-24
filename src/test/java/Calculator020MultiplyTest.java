@@ -101,11 +101,12 @@ public class Calculator020MultiplyTest {
 		}
 		LOG.info("\n");
 	}	
+	
+	@Test
 	/**
 	 * Tests the method multiply in class Calculator020 with random doubles btw 0 and -100
-	 */
-	@Test
-	public void testMultiplyMediumNegativeNumbers() {
+	 */	
+public void testMultiplyMediumNegativeNumbers() {
 
 		double firstNumber = 0;
 		double secondNumber = 0;
@@ -123,10 +124,10 @@ public class Calculator020MultiplyTest {
 		LOG.info("\n");
 	}	
 
-	/**
+	@Test
+	 /** 
 	 * Tests the method multiply in class Calculator020 with random doubles btw 0 and -100
 	 */
-	@Test
 	public void testMultiplyLargeNegativeNumbers() {
 
 		double firstNumber = 0;
@@ -145,11 +146,12 @@ public class Calculator020MultiplyTest {
 		LOG.info("\n");
 	}	
 
+	
+	@Test
 	/**
 	 * Tests the method multiply in class Calculator020 with one zero and one random double btw 0 and 100
 	 */
-	@Test
-	public void testMultiplyOneNumberIsZero() {
+	public void testMultiplyFirstNumberIsZero() {
 
 		double firstNumber = 0;
 		double secondNumber = 0;
@@ -166,10 +168,31 @@ public class Calculator020MultiplyTest {
 		LOG.info("\n");
 	}	
 	
+	@Test
+	/**
+	 * Tests the method multiply in class Calculator020 with random double btw 0 and 100 and 0
+	 */
+	public void testMultiplySecondNumberIsZero() {
+
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100));
+			result = firstNumber * secondNumber;
+
+			LOG.info("Testing the method multiply with random number 0 to 100 and zero: " + firstNumber + " and " + secondNumber);
+			assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+		LOG.info("\n");
+	}	
+
+	@Test
 	/**
 	 * Tests the method multiply in class Calculator020 with one zero and one random double btw 0 and 100
 	 */
-	@Test
 	public void testMultiplyBothNumbersAreZero() {
 
 		double firstNumber = 0;

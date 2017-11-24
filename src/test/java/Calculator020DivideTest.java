@@ -176,17 +176,19 @@ public class Calculator020DivideTest {
 	@Test
 	/**
 	 * This testmethod tests the method divide in the class Calculator with
-	 * both numbers zero
+	 * firstNumber = random 0-100, secondNumber = 0.
 	 **/
-	public void testDivideBothAreZero() {
+	public void testDivideSecondIsZero() {
 		double firstNumber = 0;
 		double secondNumber = 0;
-		double result = 0;
+		double result = -0.123456789;
 
 		for (int i = 0; i < 200; i++) { // jag kör 200 varv
-			result = firstNumber / secondNumber;
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100)); // genererar nummer 0-100
+			result = -0.123456789;
 
-			LOG.info("Testing the method divide with two zeros: " + firstNumber + " and " + secondNumber);
+			LOG.info("Testing the method divide with random numbers 0 to 100 and zero: " + firstNumber + " and "
+					+ secondNumber);
 			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
 
 		}
@@ -195,20 +197,18 @@ public class Calculator020DivideTest {
 
 	@Test
 	/**
-	 * This testmethod tests the method divide in the class Calculator with
-	 * firstNumber = random 0-100, secondNumber = 0.
+	 * This testmethod tests the method divide in the class Calculator with both
+	 * numbers zero
 	 **/
-	public void testDivideSecondIsZero() {
+	public void testDivideBothAreZero() {
 		double firstNumber = 0;
 		double secondNumber = 0;
-		double result = 0;
+		double result = -0.123456789;
 
 		for (int i = 0; i < 200; i++) { // jag kör 200 varv
-			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100)); // genererar nummer 0-100
 			result = firstNumber / secondNumber;
 
-			LOG.info("Testing the method divide with random numbers 0 to 100 and zero: " + firstNumber + " and "
-					+ secondNumber);
+			LOG.info("Testing the method divide with two zeros: " + firstNumber + " and " + secondNumber);
 			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result), 1);
 
 		}

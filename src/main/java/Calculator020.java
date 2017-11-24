@@ -68,31 +68,23 @@ public class Calculator020 {
 	 */
 
 	public double divide(double firstNumber, double secondNumber) {
-		 double sum = 0; 
+		double sum = 0;
 		if (secondNumber != 0) {
-		 sum = firstNumber/secondNumber;
+			sum = firstNumber / secondNumber;
 		} else {
-			System.out.println("Division by zero is not possible and will give the fake result -0.123456789");
+			System.out.println("\nDivision by zero is not possible and will give the fake result -0.123456789");
 			sum = -0.123456789;
 		}
 		return sum;
 	}
-		
-		/*
-		 * if (secondNumber == 0) {
-			System.out.println("Division by zero is not possible.");
-			return -0.123456789;
-		} else {
-		return firstNumber / secondNumber;
-		}
-		 */
-		/*
-		 * try {
-        sum = value1 / value2;
-    } catch (ArithmeticException e) {
-        summaryTxt.setText("Invalid operation: " + e.getMessage());
-    }
-		 */
-	}
 
-
+	/*
+	 * if (secondNumber == 0) {
+	 * System.out.println("Division by zero is not possible."); return -0.123456789;
+	 * } else { return firstNumber / secondNumber; }
+	 */
+	/*
+	 * try { sum = value1 / value2; } catch (ArithmeticException e) {
+	 * summaryTxt.setText("Invalid operation: " + e.getMessage()); }
+	 */
+}

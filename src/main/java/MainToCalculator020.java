@@ -8,15 +8,12 @@ public class MainToCalculator020 {
 		
 		Calculator020 calculator = new Calculator020();
 		
-		double firstNumber = 3; 
-		double secondNumber = 6; 
-		
-		System.out.println("Addition with " + firstNumber + " and " + secondNumber + " = " + calculator.add(firstNumber, secondNumber));
-		System.out.println("Subtraction with " + firstNumber + " and " + secondNumber + " = " +calculator.subtract(firstNumber, secondNumber));
-		System.out.println("Multiplication with " + firstNumber + " and " + secondNumber + " = " +calculator.multiply(firstNumber, secondNumber));
-		System.out.println("Division with " + firstNumber + " and " + secondNumber + " = " +calculator.divide(firstNumber, secondNumber));
-		System.out.println("Division with " + firstNumber + " and " + 0 + " = " +calculator.divide(firstNumber, 0));
-		
+		System.out.println("\nDivision 0/0: \n" + calculator.divide(0, 0));
+		System.out.println("\nDivision 0/5: \n" +calculator.divide(0, 5));
+		System.out.println("\nDivision 5/0: \n" +calculator.divide(5, 0));
+		System.out.println("\nDivision 5/2: \n" + calculator.divide(5, 2));
+
+	
 	}
 
 }

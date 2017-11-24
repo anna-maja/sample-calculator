@@ -148,7 +148,7 @@ public class Calculator020AddTest {
 	/**
 	 * This testmethod tests the method add in the class Calculator with random generated numbers 0 to 1000 and firstNumber = 0
 	 */
-	public void testAddOneNumberIsZero() {
+	public void testAddFirstNumberIsZero() {
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
@@ -166,15 +166,36 @@ public class Calculator020AddTest {
 	
 	@Test
 	/**
+	 * This testmethod tests the method add in the class Calculator with random generated numbers 0 to 1000 and secondNumber = 0
+	 */
+	public void testAddSecondNumberIsZero() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 1000));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method add with random 0-1000 and zero: " + firstNumber + " and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+		LOG.info("\n");
+	}
+
+	@Test
+	/**
 	 * This testmethod tests the method add in the class Calculator with both numbers are 0
 	 */
+	
 	public void testAddBothNumbersAreZero() {
 
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
 
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 10; i++) {
 			result = firstNumber + secondNumber;
 
 			LOG.info("Testing the method add with numbers 0 and 0: " + firstNumber + " and " + secondNumber);
@@ -183,5 +204,10 @@ public class Calculator020AddTest {
 		}
 		LOG.info("\n");
 	}
-
+/*
+ * testmethods with zero can be combined in one test. 
+ * 1, both numbers zero, 
+ * 2, for-loop containing firstNumber=0 and secondNumber=0.
+ * Skriver sen ut log för varannan testning.
+ */
 }
