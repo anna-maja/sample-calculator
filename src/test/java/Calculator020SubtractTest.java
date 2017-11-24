@@ -144,11 +144,12 @@ public class Calculator020SubtractTest {
 		}
 		LOG.info("\n");
 	}
-	/**
-	 * This testmethod tests the method subtract in the class Calculator with one number zero
-	 */
+	
 	@Test
-	public void testSubtractOneNumberIsZero() {
+	/**
+	 * This testmethod tests the method subtract in the class Calculator with first number zero
+	 */
+	public void testSubtractFirstNumberIsZero() {
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
@@ -164,11 +165,31 @@ public class Calculator020SubtractTest {
 		LOG.info("\n");
 	}
 	
+	@Test
+	/**
+	 * This testmethod tests the method subtract in the class Calculator with first number zero
+	 */
+	public void testSubtractSecondNumberIsZero() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble() * 100));
+			result = firstNumber - secondNumber;
+
+			LOG.info("Testing the method subtract with one zero and one random number 0- 100: " + firstNumber + " and " + secondNumber);
+			assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result), 1);
+
+		}
+		LOG.info("\n");
+	}
+	
+	@Test
 	/**
 	 * This testmethod tests the method subtract in the class Calculator with both numbers zero
 	 */
-	@Test
-	public void testSubtractOBothNumbersAreZero() {
+	public void testSubtractBothNumbersAreZero() {
 		double firstNumber = 0;
 		double secondNumber = 0;
 		double result = 0;
