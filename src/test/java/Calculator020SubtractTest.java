@@ -82,10 +82,10 @@ public class Calculator020SubtractTest {
 		LOG.info("\n");
 	}
 
+	@Test
 	/**
 	 * This testmethod tests the method subtract in the class Calculator witn negative numbers 0 to -10
 	 */
-	@Test
 	public void testSubtractSmallNegativeNumbers() {
 		double firstNumber = 0;
 		double secondNumber = 0;
@@ -103,10 +103,10 @@ public class Calculator020SubtractTest {
 		LOG.info("\n");
 	}
 	
+	@Test
 	/**
 	 * This testmethod tests the method subtract in the class Calculator witn negative numbers 0 to -100
 	 */
-	@Test
 	public void testSubtractMediumNegativeNumbers() {
 		double firstNumber = 0;
 		double secondNumber = 0;
@@ -124,10 +124,10 @@ public class Calculator020SubtractTest {
 		LOG.info("\n");
 	}
 	
+	@Test
 	/**
 	 * This testmethod tests the method subtract in the class Calculator witn negative numbers 0 to -1000
 	 */
-	@Test
 	public void testSubtractLargeNegativeNumbers() {
 		double firstNumber = 0;
 		double secondNumber = 0;
